@@ -2,7 +2,7 @@
 // You should commit this file to source control.
 const { withLayer0, withServiceWorker } = require('@layer0/next/config')
 
-const isLayer0 = (process.argv[1] || process.env.npm_package_scripts_layer0_deploy || '').includes('layer0')
+const isLayer0 = (process.env.npm_package_scripts_layer0_deploy || '').includes('layer0')
 
 const nextConfig = {
 	future: {
