@@ -6,8 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "build-export": "next build && next export",
-    "ci": "echo ci"
+    "build-export": "next build && next export"
   },
   "name": "study-nextjs-deployment",
   "version": "0.1.0",
