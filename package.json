@@ -1,16 +1,30 @@
 {
-  "name": "study-nextjs-deployment",
-  "version": "0.1.0",
-  "private": true,
   "scripts": {
+    "layer0:dev": "layer0 dev",
+    "layer0:build": "layer0 build",
+    "layer0:deploy": "layer0 deploy",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "cloudflare-build": "next build && next export"
   },
+  "name": "study-nextjs-deployment",
+  "version": "0.1.0",
+  "private": true,
+  "resolutions": {
+    "webpack": "^5.0.0"
+  },
   "dependencies": {
     "next": "10.1.3",
     "react": "17.0.2",
     "react-dom": "17.0.2"
+  },
+  "devDependencies": {
+    "@layer0/cli": "3.2.0",
+    "@layer0/core": "3.2.0",
+    "@layer0/devtools": "3.2.0",
+    "@layer0/next": "3.2.0",
+    "@layer0/prefetch": "3.2.0",
+    "@layer0/react": "3.2.0"
   }
 }

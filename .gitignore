@@ -4,7 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-
 # testing
 /coverage
 
@@ -32,3 +31,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Layer0 generated build directory
+.layer0
+
