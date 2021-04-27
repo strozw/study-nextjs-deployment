@@ -2,11 +2,8 @@
 // You should commit this file to source control.
 const { withLayer0, withServiceWorker } = require('@layer0/next/config')
 
-const isLayer0 = 
-  ((process.mainModule.path || '').includes('layer0')) ||
-  (process.env.npm_lifecycle_script || '').includes('layer0')
-
-console.log({ isLayer0 })
+const npmConfigArgv = JSON.parse(process?.env.npm_config_argv || '{}')
+const isLayer0 = (npmConfigArgv?.cooked?.[1] || '').includes('layer0')
 
 const nextConfig = {
 	future: {
@@ -14,8 +11,8 @@ const nextConfig = {
   },
 }
 
-if (isLayer0) {
-  module.exports = withLayer0(
+module.exports = isLayer0
+  ? withLayer0(
     withServiceWorker({
       // Output sourcemaps so that stacktraces have original source filenames and line numbers when tailing
       // the logs in the Layer0 developer console.
@@ -23,6 +20,5 @@ if (isLayer0) {
       ...nextConfig
     })
   )
-} else {
-  module.exports = nextConfig
-}
+  : nextConfig
+
